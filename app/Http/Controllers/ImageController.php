@@ -36,11 +36,12 @@ class ImageController extends Controller
             });
         }
 
-        if (Auth::user()->role == 0) {
+        // if (Auth::user()->role == 0) {
             $images = $query->latest()->get();
-        } else {
-            $images = $query->where('user_id', Auth::id())->latest()->get();
-        }
+
+        // } else {
+        //     $images = $query->where('user_id', Auth::id())->latest()->get();
+        // }
 
         return view('home', compact('images'));
     }
